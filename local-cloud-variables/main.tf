@@ -54,6 +54,6 @@ variable "content_map" {
     "mid" = "s-4vcpu-4gb"
     "large" = "s-8vcpu-8gb"
   }
-  type        = map
+  type        = map(string)
   description = "boolean variable"
 }
