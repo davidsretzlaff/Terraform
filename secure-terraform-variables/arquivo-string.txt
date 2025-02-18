@@ -1,0 +1,1 @@
+'teste de variavel com linha de comando
