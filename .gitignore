@@ -1,0 +1,12 @@
+# Arquivos de estado do Terraform
+*.tfstate
+*.tfstate.*
+
+# Arquivos de plano do Terraform
+*.tfplan
+
+# Diretório de configuração do Terraform
+.terraform/
+
+# Arquivos de lock do Terraform
+*.lock.hcl
