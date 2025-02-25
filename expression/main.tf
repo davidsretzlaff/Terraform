@@ -26,3 +26,17 @@ variable "join_for_value" {
 variable "value" {
   default = 40
 }
+
+
+resource "local_file" "validation_expression" {
+  content = join(", ", [for v in var.validation_expression_value: upper(v)])
+  filename = "validation_expression.txt"
+}
+
+variable "validation_expression_value" {
+  default = ["kubernetes", "Jenkins", "Terraform"]
+  validation {
+    condition = contains(var.validation_expression_value, "kubernetes")
+    error_message = "this list need to have kubernetes"
+  }
+}
