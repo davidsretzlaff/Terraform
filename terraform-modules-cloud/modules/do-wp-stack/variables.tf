@@ -1,7 +1,3 @@
-variable "do_token" {
-  type = string
-}
-
 
 variable "region" {
   type    = string
@@ -17,4 +13,9 @@ variable "wp_vm_count" {
     condition = var.wp_vm_count > 1
     error_message = "the minimum number of machines required is two"
   }
+}
+
+variable "vms_ssh" {
+  type = string
+  description = "Key ssh to access the VMS"
 }

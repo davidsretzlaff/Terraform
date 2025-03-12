@@ -1,27 +1,28 @@
 
-output "wp_lb_ip" {
-  value = digitalocean_loadbalancer.wp_lb.ip
+output "stack_wp_lb_ip" {
+  value = module.wp_stack.wp_lb_ip
   description = "load balance IP"
 }
 
-output "wp_vm_ips" {
-  value = digitalocean_droplet.vm_wp[*].ipv4_address
+output "stack_vm_ips" {
+  value = module.wp_stack.wp_vm_ips
+
   description = "Wordpress machines ips"
 }
 
-output "wp_vm_nfs" {
-  value = digitalocean_droplet.vm_nfs.ipv4_address
+output "stack_vm_nfs" {
+  value = module.wp_stack.nfs_vm_ips
   description = "NFS machine ip"
 }
 
 
-output "wp_db_user" {
-  value     = digitalocean_database_user.wp_database_user.name
+output "stack_wp_db_user" {
+  value = module.wp_stack.wp_db_user
   description = "Database user"
 }
 
-output "wp_db_pwd" {
-  value     = digitalocean_database_user.wp_database_user.password
+output "stack_wp_db_pwd" {
+  value = module.wp_stack.wp_db_pwd
   description = "Database Password"
   sensitive = true
 }
