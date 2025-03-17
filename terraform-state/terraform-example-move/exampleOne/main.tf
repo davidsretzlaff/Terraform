@@ -5,9 +5,12 @@ resource "local_file" "file" {
 }
 
 resource "random_pet" "pets" {
-    count = var.quantity
+ count = var.quantity
 }
 
 variable "quantity" {
-    default = 4
+  default = 4
 }
+
+// terraform state mv "random_pet.pets" "random_pet.pets[0]"
+// terraform apply
