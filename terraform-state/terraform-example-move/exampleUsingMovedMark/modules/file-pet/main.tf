@@ -1,3 +1,5 @@
+
+
 resource "local_file" "file" {
   content = random_pet.pets.id 
   filename = "file.txt"  
